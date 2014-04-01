@@ -1,0 +1,17 @@
+common: &common
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: sample_app
+  password:
+
+development:
+  database: sample_app_development
+  <<: *common
+
+test: &test
+  database: sample_app_test
+  <<: *common
+
+cucumber:
+  <<: *test
